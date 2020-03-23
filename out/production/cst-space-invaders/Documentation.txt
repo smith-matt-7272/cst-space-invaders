@@ -1,0 +1,38 @@
+You will require a BinFiles directory in your project directory.
+
+Still to do:
+
+Bugs:
+Still get ConcurrentModificationException occasionally when UFO is hit. (Line 760)
+Something to do with it being in an ArrayList.  Converting from an ArrayList
+to an Array is a possible solution according to research.
+
+Missiles/explosions still exist after a round is completed, and a scene has changed.
+Can result in UFO being destroyed from a missile fired in a previous round.
+
+Extra buttons occasionally are created during a screen transition.  Likely due to
+thread timing that triggers the transition.
+
+Occasionally adds an extra "kill" or "level", again, likely due to thread timing
+which trigger those increments.  Can lead to unsynced kills/level numbers.
+
+The "shimmy" feature seems to fail.  Can't seem to manage it to evenly 
+
+Clean up:
+The load screens are a disastrous monstrosity.  Separate the Scenes/panes into
+a separate class(es).
+
+Not sure if passing the same stage through the whole process makes the best sense,
+or if creating new stages would be better?
+
+Create a separate class for UFOs and for missiles, so the individual objects can
+have their own properties instead of depending on full-scope variables.
+
+Ideas to Implement:
+Some sort of upgrade system.  During transition screen, player can assign "upgrades"
+which may improve missile speed, reduce reload, increase launcher move speed.
+Background effects; a more dynamic background which gives the impression that the
+UFO invasion is a "global" conflict
+
+
+
